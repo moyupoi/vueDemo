@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@function getRem($pixel) {
+  @return $pixel / 37.5 * 1rem;
+}
+@function getRemFour($top,$right, $bottom, $left) {
+  @return $top / 37.5 * 1rem $right / 37.5 * 1rem $bottom / 37.5 * 1rem $left / 37.5 * 1rem;
+}
+@mixin getFont($size, $link, $color, $align) {
+  font-size: getRem($size);
+  line-height: getRem($link);
+  color: $color;
+  text-align: $align;
+}
+@mixin getWH($width, $height) {
+  width: getRem($width);
+  height: getRem($height);
+}
+
+.mint-swipe {
+  @include getWH(375, 500);
+  // width: 375px;
+  // height: 500px;
+}
